@@ -1,16 +1,15 @@
 <?php 
-session_start();  
-if(isset($_SESSION[alogin])){
-  include("../app/database.php");
-  
-}else{
-   header('location: index.php');
-}
+  session_start();  
+  if (isset($_SESSION[alogin])) {
+    include("../app/database.php");
+  } else {
+    header('location: index.php');
+  }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>quiz</title>
+  <title>Quizon Quiz Application</title>
   <link rel="stylesheet" type="text/css" href="../assests/css/bootstrap-reboot.css">
   <link rel="stylesheet" type="text/css" href="../assests/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../assests/css/bootstrap-grid.css">
@@ -20,7 +19,7 @@ if(isset($_SESSION[alogin])){
 <header> 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Quiz</a>
+  <a class="navbar-brand" href="#">Quizon</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -44,10 +43,13 @@ if(isset($_SESSION[alogin])){
     </ul>
   </div>
   <span class="navbar-text">
-      <?php if(isset($_SESSION[alogin])){ echo "Hi Admin, <a href='signout.php'>Signout</a>"; }
-           else { echo "Login"; } 
-        ?>
-    </span>
- 
+    <?php 
+      if (isset($_SESSION[alogin])) { 
+        echo "Hi Admin, <a href='signout.php'>Signout</a>"; 
+      } else { 
+        echo "Login"; 
+      } 
+    ?>
+  </span>
 </nav>
 </header>
